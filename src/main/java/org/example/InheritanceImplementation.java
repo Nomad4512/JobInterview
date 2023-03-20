@@ -53,7 +53,7 @@ class Vehicle2 {
     }
 
     public void move() {
-        System.out.println("차가 이동중입니다.");
+    //    System.out.println("차가 이동중입니다.");
     }
 
     public String getBrand() {
@@ -81,13 +81,30 @@ class Car2 extends Vehicle2 implements Drivable {
 
     @Override
     public void startEngine() {
-        engineRunning = true;
-        System.out.println("시동을 겁니다.");
+        if(!engineRunning) {
+            engineRunning = true;
+            System.out.println("시동을 겁니다.");
+        }else {
+            System.out.println("이미 시동이 켜져있습니다.");
+        }
     }
 
     @Override
     public void stopEngine() {
-        engineRunning = false;
-        System.out.println("시동을 끕니다.");
+        if(engineRunning) {
+            engineRunning = false;
+            System.out.println("시동을 끕니다.");
+        }else {
+            System.out.println("이미 시동이 꺼져있습니다.");
+        }
+    }
+
+    @Override
+    public void move(){
+        if(engineRunning) {
+            System.out.println("차가 이동중입니다.");
+        } else  {
+            System.out.println("시동이 꺼져있습니다.");
+        }
     }
 }
