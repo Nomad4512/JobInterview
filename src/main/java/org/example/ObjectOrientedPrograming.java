@@ -7,8 +7,10 @@ public class ObjectOrientedPrograming {
     // 컴퓨터 프로그래밍의 패러다임을 의미한다.
 
     // 2. 객체 지향 프로그래밍의 4가지 특징
-    // 추상화(Abstraction)는 사물이나 표상을 어떤 성질, 공통성, 본질에 착안하여 그것을 추출하여 파악하는 것이다.
+    // (1)추상화(Abstraction)는 사물이나 표상을 어떤 성질, 공통성, 본질에 착안하여 그것을 추출하여 파악하는 것이다.
     // 자바에서 추상화를 구현할 수 있는 문법 요소로는 추상 클래스(abstract class)와 인터페이스(interface)가 있다.
+
+    // (2) 다형성이란 어떤 객체의 속성이나 기능이 상황에 따라 여러 가지 형태를 가질 수 있는 성질을 의미한다.
 
     public static void main(String[] args) {
         Car car = new Car();
@@ -21,25 +23,36 @@ public class ObjectOrientedPrograming {
         mt.startEngine();
         mt.moveForward();
         mt.moveBackward();
+        System.out.println("=====================");
+
+        Move vehicles[] = new Move[2];
+        vehicles[0] = new Car();
+        vehicles[1] = new MotorBike();
+
+        for (Move vc : vehicles){
+            System.out.println(vc.getClass());
+        }
+        System.out.println("=====================");
+        Driver driver = new Driver();
+        driver.drive(car);
+        driver.drive(mt);
+
     }
 }
 
 class Car extends Move implements Vehicle{
     // 속성 정의
-    String company;
-    String model;
-    String color;
-    int wheels;
+
     boolean isConvertible;
 
     @Override
     public void startEngine() {
-        System.out.println("시동을 겁니다.");
+        System.out.println("차 시동을 겁니다.");
     }
 
     @Override
     public void stopEngine() {
-        System.out.println("시동을 끕니다.");
+        System.out.println("차 시동을 끕니다.");
     }
 
     @Override
@@ -92,20 +105,32 @@ class MotorBike extends Move implements Vehicle {
 
     @Override
     public void startEngine() {
-        System.out.println("시동을 켭니다.");
+        System.out.println("오토바이 시동을 켭니다.");
     }
 
     @Override
     public void stopEngine() {
-        System.out.println("시동을 끕니다.");
+        System.out.println("오토바이 시동을 끕니다.");
     }
 }
 
 class Move {
+    String company;
+    String model;
+    String color;
+    int wheels;
+
     void moveForward(){
         System.out.println("전진합니다.");
     };
     void moveBackward(){
         System.out.println("후진합니다.");
+    }
+}
+
+class Driver {
+    void drive(Vehicle vehicle){
+        vehicle.startEngine();
+        vehicle.stopEngine();
     }
 }
