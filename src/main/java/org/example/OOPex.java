@@ -8,6 +8,13 @@ public class OOPex {
         double b = 3;
 
         performCalculations(a, b, calculator);
+
+        /*
+        b = 0;
+        System.out.println("==========================");
+        System.out.println("0으로 나누기 테스트");
+        performCalculations(a, b, calculator);
+         */
     }
 
     public static void performCalculations(double a, double b, Calculator calculator) {
