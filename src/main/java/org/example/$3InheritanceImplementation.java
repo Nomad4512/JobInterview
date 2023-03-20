@@ -1,6 +1,6 @@
 package org.example;
 
-public class InheritanceImplementation {
+public class $3InheritanceImplementation {
 
     /*
     상속과 구현은 자바와 객체 지향 프로그래밍의 두 가지 기본 개념이다.

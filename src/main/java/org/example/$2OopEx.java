@@ -1,6 +1,6 @@
 package org.example;
 
-public class OOPex {
+public class $2OopEx {
     public static void main(String[] args) {
         Calculator calculator = new AdvancedCalculator();
 

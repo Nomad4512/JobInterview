@@ -1,6 +1,6 @@
 package org.example;
 
-public class OverloadOverride {
+public class $1OverloadOverride {
 
     //1. 오버로딩
     // : 같은 이름의 메소드(method) 또는 생성자를 매개변수의 개수나 타입을 다르게 지정함으로써 2개 이상 정의하는 것을 의미한다
@@ -18,7 +18,7 @@ public class OverloadOverride {
     }
 
     public static void main(String[] args) {
-        OverloadOverride oo = new OverloadOverride();
+        $1OverloadOverride oo = new $1OverloadOverride();
         System.out.println(">>>오버로딩 테스트 시작");
 
         oo.cat();
