@@ -24,7 +24,7 @@ public class ObjectOrientedPrograming {
     }
 }
 
-class Car implements Vehicle{
+class Car extends Move implements Vehicle{
     // 속성 정의
     String company;
     String model;
@@ -35,6 +35,11 @@ class Car implements Vehicle{
     @Override
     public void startEngine() {
         System.out.println("시동을 겁니다.");
+    }
+
+    @Override
+    public void stopEngine() {
+        System.out.println("시동을 끕니다.");
     }
 
     @Override
@@ -64,17 +69,16 @@ class Car implements Vehicle{
 }
 
 interface Vehicle {
+
+    // 인터페이스에는 추상 메서드나 상수를 통해서 어떤 객체가 수행해야 하는 핵심적인 역할만을 규정해두고,
+    // 실제적인 구현은 해당 인터페이스를 구현하는 각각의 객체들에서 하도록 프로그램을 설계
     public abstract void startEngine();
-    void moveForward();
-    void moveBackward();
+    public abstract void stopEngine();
+
 }
 
-class MotorBike implements Vehicle{
+class MotorBike extends Move implements Vehicle {
 
-    @Override
-    public void startEngine() {
-        System.out.println("시동을 겁니다.");
-    }
 
     @Override
     public void moveForward() {
@@ -84,5 +88,24 @@ class MotorBike implements Vehicle{
     @Override
     public void moveBackward() {
         System.out.println("오토바이가 뒤로 후진합니다.");
+    }
+
+    @Override
+    public void startEngine() {
+        System.out.println("시동을 켭니다.");
+    }
+
+    @Override
+    public void stopEngine() {
+        System.out.println("시동을 끕니다.");
+    }
+}
+
+class Move {
+    void moveForward(){
+        System.out.println("전진합니다.");
+    };
+    void moveBackward(){
+        System.out.println("후진합니다.");
     }
 }
