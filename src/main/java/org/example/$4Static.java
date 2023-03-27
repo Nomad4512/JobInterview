@@ -5,6 +5,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class $4Static {
     // 서술방향 : static 사용방법 - 주의사항 - 사용하면 좋은 경우와 안좋은 경우(동시성 문제 발생) - 동시성문제 해결법(동기화처리, thread-safe)
+    //          - 해결법 선택시 고려사항
 
     /*
     Java에서 static 키워드는 다음과 같은 멤버에 사용될 수 있다.
